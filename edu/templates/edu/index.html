@@ -1,0 +1,39 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Education</title>
+</head>
+<body>
+<h1><span><</span>A<span>></span> code education</h1>
+<table>
+    <tr class="fx">
+        <td><p>ID</p></td>
+        <td><p>Name</p></td>
+        <td><p>Last name</p></td>
+        <td><p>Days</p></td>
+        <td><p>Age</p></td>
+        <td><p>Lesson</p></td>
+        <td><p>Teacher</p></td>
+        <td><p>Phone</p></td>
+    </tr>
+    {%for item in edu%}
+    <tr>
+        <td><p>{{item.pk}}</p></td>
+        <td><p>{{item.name}}</p></td>
+        <td><p>{{item.lastname}}</p></td>
+        <td><p>{{item.days}}</p></td>
+        <td><p>{{item.age}}</p></td>
+        <td><p>{{item.category}}</p></td>
+        <td><p>{{item.teacher}}</p></td>
+        <td><p><a href="tel:+{{item.phone}}">{{item.phone}}</a></p></td>
+    </tr>
+    {%endfor%}
+</table>
+<link rel="stylesheet" href="{% static 'js/main.js' %}">
+</body>
+</html>
